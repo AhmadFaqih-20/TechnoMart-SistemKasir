@@ -17,23 +17,8 @@ $segment = service('uri')->getSegment(1);
                 </a>
             </li>
             <li class="nav-item">
-                <a href="<?= base_url('products'); ?>" class="nav-link <?= $segment== 'products' ? 'active' : '' ?>">
-                    <i class="fas fa-box me-2"></i><span>Products</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="<?= base_url('categories'); ?>" class="nav-link <?= $segment== 'categories' ? 'active' : '' ?>">
-                    <i class="fas fa-tags me-2"></i><span>Categories</span>
-                </a>
-            </li>
-            <li class="nav-item">
                 <a href="<?= base_url('customers'); ?>" class="nav-link <?= $segment== 'customers' ? 'active' : '' ?>">
                     <i class="fas fa-users me-2"></i><span>Customers</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="<?= base_url('sales'); ?>" class="nav-link <?= $segment== 'sales' ? 'active' : '' ?>">
-                    <i class="fas fa-shopping-cart me-2"></i><span>Sales</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -42,13 +27,18 @@ $segment = service('uri')->getSegment(1);
                 </a>
             </li>
             <li class="nav-item">
-                <a href="<?= base_url('reports'); ?>" class="nav-link <?= $segment== 'reports' ? 'active' : '' ?>">
-                    <i class="fas fa-chart-bar me-2"></i><span>Reports</span>
+                <a href="<?= base_url('categories'); ?>" class="nav-link <?= $segment== 'categories' ? 'active' : '' ?>">
+                    <i class="fas fa-tags me-2"></i><span>Categories</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="<?= base_url('settings'); ?>" class="nav-link <?= $segment== 'settings' ? 'active' : '' ?>">
-                    <i class="fas fa-cog me-2"></i><span>Settings</span>
+                <a href="<?= base_url('products'); ?>" class="nav-link <?= $segment== 'products' ? 'active' : '' ?>">
+                    <i class="fas fa-box me-2"></i><span>Products</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="<?= base_url('sales'); ?>" class="nav-link <?= $segment== 'sales' ? 'active' : '' ?>">
+                    <i class="fas fa-shopping-cart me-2"></i><span>Sales</span>
                 </a>
             </li>
         </ul>
@@ -70,11 +60,6 @@ $segment = service('uri')->getSegment(1);
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url('products'); ?>" class="nav-link text-light <?= $segment == 'products' ? 'active bg-primary' : '' ?>">
-                        <i class="fas fa-box me-2"></i>Products
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a href="<?= base_url('categories'); ?>" class="nav-link text-light <?= $segment == 'categories' ? 'active bg-primary' : '' ?>">
                         <i class="fas fa-tags me-2"></i>Categories
                     </a>
@@ -87,6 +72,11 @@ $segment = service('uri')->getSegment(1);
                 <li class="nav-item">
                     <a href="<?= base_url('customers'); ?>" class="nav-link text-light <?= $segment == 'customers' ? 'active bg-primary' : '' ?>">
                         <i class="fas fa-users me-2"></i>Customers
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('products'); ?>" class="nav-link text-light <?= $segment == 'products' ? 'active bg-primary' : '' ?>">
+                        <i class="fas fa-box me-2"></i>Products
                     </a>
                 </li>
                 <li class="nav-item">

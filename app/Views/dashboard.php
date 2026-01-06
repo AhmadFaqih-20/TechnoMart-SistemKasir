@@ -2,10 +2,53 @@
 
 <?= $this->section('content'); ?>
 
-<div class="row mb-4">
-    <div class="col-12">
-        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-        <p class="text-muted">Welcome to Technomart Management System</p>
+<!-- Welcome Hero Section -->
+<div class="hero-section mb-5">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <div class="hero-content">
+                    <div class="hero-badge mb-3">
+                        <span class="badge bg-primary px-3 py-2">
+                            <i class="fas fa-star me-1"></i>Dashboard Overview
+                        </span>
+                    </div>
+                    <h1 class="hero-title mb-3">
+                        Welcome back, Administrator!
+                        <span class="wave-emoji">👋</span>
+                    </h1>
+                    <p class="hero-subtitle mb-4">
+                        Here's what's happening with your Technomart business today.
+                        Monitor performance, track sales, and manage your operations efficiently.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" id="currentTime">--:--</div>
+                            <div class="stat-label">Current Time</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number"><?php echo date('M j, Y'); ?></div>
+                            <div class="stat-label">Today's Date</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="uptime">--</div>
+                            <div class="stat-label">System Uptime</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="hero-visual">
+                    <div class="floating-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Analytics Ready</h4>
+                        <p>All your business metrics in one place</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -185,15 +228,13 @@ createChart('salesChart', 'line', salesData);
 
 // Revenue Chart
 const revenueData = {
-    labels: ['Electronics', 'Accessories', 'Clothing', 'Books'],
+    labels: ['Electronics', 'Accessories'],
     datasets: [{
         label: 'Revenue',
-        data: [30000, 15000, 10000, 5000],
+        data: [30000, 15000],
         backgroundColor: [
             'rgba(255, 99, 132, 0.8)',
-            'rgba(54, 162, 235, 0.8)',
-            'rgba(255, 205, 86, 0.8)',
-            'rgba(75, 192, 192, 0.8)'
+            'rgba(54, 162, 235, 0.8)'
         ],
         borderWidth: 1
     }]
