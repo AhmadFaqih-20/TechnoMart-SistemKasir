@@ -8,57 +8,16 @@ $perPage = $perPage ?? 5;
 $noAwal = 1 + ($perPage * ($currentPage - 1))
 ?>
 
-<!-- Modern Header Section -->
-<div class="modern-header mb-5">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-lg-8">
-                <div class="header-content">
-                    <div class="header-icon mb-3">
-                        <i class="fas fa-box-open"></i>
-                    </div>
-                    <h1 class="header-title mb-2">
-                        Product Management
-                        <span class="title-accent">System</span>
-                    </h1>
-                    <p class="header-subtitle">
-                        Comprehensive inventory control and product lifecycle management.
-                        Track stock levels, manage categories, and optimize your product catalog.
-                    </p>
-                    <div class="header-stats mt-4">
-                        <div class="stat-card">
-                            <div class="stat-value" id="totalProducts">--</div>
-                            <div class="stat-label">Total Products</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value" id="activeProducts">--</div>
-                            <div class="stat-label">Active Products</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value" id="lowStock">--</div>
-                            <div class="stat-label">Low Stock Items</div>
-                        </div>
-                    </div>
-                </div>
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h1 class="h3 mb-0 text-gray-800">Products</h1>
+                <p class="text-muted">Manage your product inventory</p>
             </div>
-            <div class="col-lg-4">
-                <div class="header-actions">
-                    <div class="action-buttons">
-                        <a href="<?= base_url('products/create') ?>" class="btn btn-primary btn-lg action-btn">
-                            <i class="fas fa-plus-circle me-2"></i>
-                            <span>Add Product</span>
-                        </a>
-                        <a href="<?= base_url('categories') ?>" class="btn btn-outline-primary btn-lg action-btn">
-                            <i class="fas fa-tags me-2"></i>
-                            <span>Categories</span>
-                        </a>
-                        <button class="btn btn-outline-secondary btn-lg action-btn" onclick="exportProducts()">
-                            <i class="fas fa-download me-2"></i>
-                            <span>Export</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <a href="<?= base_url('products/create') ?>" class="btn btn-primary">
+                <i class="fas fa-plus me-2"></i>Add New Product
+            </a>
         </div>
     </div>
 </div>
