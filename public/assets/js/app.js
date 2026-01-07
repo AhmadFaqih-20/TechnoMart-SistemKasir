@@ -1,7 +1,8 @@
-// Modern Admin Dashboard JavaScript
+// JavaScript untuk dashboard admin yang keren
+// Ini buat nge-handle semua interaksi di halaman admin
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Hide preloader
+    // Sembunyiin preloader pas halaman udah siap
     const preloader = document.getElementById('preloader');
     if (preloader) {
         setTimeout(() => {
@@ -9,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 500);
     }
 
-    // Sidebar toggle functionality
+    // Fitur toggle sidebar biar bisa collapse sama expand
     const sidebarToggle = document.getElementById('sidebarToggle');
     const sidebar = document.getElementById('sidebar');
     const mainArea = document.querySelector('.main-area');
@@ -19,12 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
             sidebar.classList.toggle('collapsed');
             mainArea.classList.toggle('expanded');
 
-            // Store sidebar state in localStorage
+            // Simpan status sidebar di localStorage biar persistent
             const isCollapsed = sidebar.classList.contains('collapsed');
             localStorage.setItem('sidebarCollapsed', isCollapsed);
         });
 
-        // Restore sidebar state on page load
+        // Balikin status sidebar pas halaman di-refresh
         const sidebarCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
         if (sidebarCollapsed) {
             sidebar.classList.add('collapsed');
@@ -32,39 +33,39 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Add fade-in animation to content
+    // Tambahin animasi fade-in ke konten
     const contentWrapper = document.querySelector('.content-wrapper');
     if (contentWrapper) {
         contentWrapper.classList.add('fade-in');
     }
 
-    // Initialize tooltips
+    // Aktifin tooltip biar user tau fungsi tombol apa
     const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
     const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl);
     });
 
-    // Handle flash messages auto-hide
+    // Auto hide alert message setelah 5 detik
     const alerts = document.querySelectorAll('.alert');
     alerts.forEach(alert => {
         setTimeout(() => {
             const bsAlert = new bootstrap.Alert(alert);
             bsAlert.close();
-        }, 5000); // Auto hide after 5 seconds
+        }, 5000); // Sembunyi otomatis setelah 5 detik
     });
 
-    // Confirm delete actions
+    // Konfirmasi sebelum hapus data
     const deleteButtons = document.querySelectorAll('[data-confirm-delete]');
     deleteButtons.forEach(button => {
         button.addEventListener('click', function(e) {
-            const message = this.getAttribute('data-confirm-delete') || 'Are you sure you want to delete this item?';
+            const message = this.getAttribute('data-confirm-delete') || 'Yakin mau hapus data ini?';
             if (!confirm(message)) {
                 e.preventDefault();
             }
         });
     });
 
-    // Table search functionality
+    // Fitur pencarian di tabel
     const searchInputs = document.querySelectorAll('.table-search');
     searchInputs.forEach(input => {
         input.addEventListener('keyup', function() {
@@ -79,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Auto-resize textareas
+    // Auto resize textarea biar gak perlu scroll
     const textareas = document.querySelectorAll('textarea');
     textareas.forEach(textarea => {
         textarea.addEventListener('input', function() {
@@ -88,18 +89,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Initialize charts
+    // Mulai load chart-chart
     initializeCharts();
 
 });
 
 
 
-// Chart.js initialization helper
+// Fungsi bantu buat bikin chart pake Chart.js
 function createChart(canvasId, type, data, options = {}) {
     const ctx = document.getElementById(canvasId);
     if (ctx && typeof Chart !== 'undefined') {
-        // Destroy existing chart if it exists
+        // Hapus chart yang udah ada kalo ada, biar gak bentrok
         if (Chart.getChart(canvasId)) {
             Chart.getChart(canvasId).destroy();
         }
@@ -121,21 +122,21 @@ function createChart(canvasId, type, data, options = {}) {
     }
 }
 
-// Initialize charts on page load
+// Mulai load semua chart pas halaman pertama kali dimuat
 function initializeCharts() {
-    // Check if Chart.js is loaded
+    // Cek apakah Chart.js udah ke-load atau belum
     if (typeof Chart === 'undefined') {
-        console.warn('Chart.js not loaded, retrying...');
+        console.warn('Chart.js belum ke-load, coba lagi...');
         setTimeout(initializeCharts, 100);
         return;
     }
 
-    // Sales Chart
+    // Chart Penjualan - bentuk garis
     const salesData = {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
         datasets: [{
-            label: 'Sales ($)',
-            data: [12000, 19000, 3000, 5000, 2000, 3000],
+            label: 'Penjualan (Rp)',
+            data: [120000000, 100000000, 50000000, 30000000, 20000000, 10000000],
             borderColor: '#7c3aed',
             backgroundColor: 'rgba(124, 58, 237, 0.1)',
             borderWidth: 3,
@@ -160,11 +161,11 @@ function initializeCharts() {
         }
     });
 
-    // Revenue Chart
+    // Chart Pendapatan - bentuk donat
     const revenueData = {
-        labels: ['Electronics', 'Accessories'],
+        labels: ['Elektronik', 'Aksesoris'],
         datasets: [{
-            label: 'Revenue (Rp)',
+            label: 'Pendapatan (Rp)',
             data: [30000, 15000],
             backgroundColor: [
                 '#7c3aed',
@@ -184,8 +185,9 @@ function initializeCharts() {
     });
 }
 
-// Utility functions
+// Fungsi-fungsi utility yang berguna
 function showToast(message, type = 'info') {
+    // Cari container toast, kalo gak ada bikin baru
     const toastContainer = document.querySelector('.toast-container');
     if (!toastContainer) {
         const container = document.createElement('div');
@@ -194,6 +196,7 @@ function showToast(message, type = 'info') {
         document.body.appendChild(container);
     }
 
+    // Bikin element toast baru
     const toast = document.createElement('div');
     toast.className = `toast align-items-center text-white bg-${type} border-0`;
     toast.setAttribute('role', 'alert');
@@ -204,10 +207,12 @@ function showToast(message, type = 'info') {
         </div>
     `;
 
+    // Tambahin ke container dan tampilin
     document.querySelector('.toast-container').appendChild(toast);
     const bsToast = new bootstrap.Toast(toast);
     bsToast.show();
 
+    // Hapus dari DOM pas toast udah ditutup
     toast.addEventListener('hidden.bs.toast', () => {
         toast.remove();
     });

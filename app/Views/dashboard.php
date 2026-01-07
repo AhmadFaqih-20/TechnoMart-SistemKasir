@@ -16,7 +16,7 @@
             <div class="card-body">
                 <div class="row align-items-center">
                     <div class="col">
-                        <div class="value">$40,000</div>
+                        <div class="value">100.000.000</div>
                         <div class="label">Monthly Earnings</div>
                     </div>
                     <div class="col-auto">

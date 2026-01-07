@@ -1,6 +1,6 @@
-/* Modern Admin Dashboard Styles */
+/* CSS buat dashboard admin yang modern */
 
-/* Galaxy Theme Colors */
+/* Warna tema galaxy - biar kelihatan keren */
 :root {
     --galaxy-primary: #4c1d95;
     --galaxy-secondary: #7c3aed;
@@ -10,7 +10,7 @@
     --galaxy-gradient: linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #a855f7 100%);
 }
 
-/* Sidebar Enhancements */
+/* Styling sidebar biar lebih cantik */
 .sidebar {
     position: fixed;
     top: 0;
@@ -41,7 +41,7 @@
     width: 100%;
 }
 
-/* Main Content */
+/* Area konten utama */
 .main-area {
     margin-left: 230px;
     transition: margin-left 0.3s ease;
@@ -51,7 +51,7 @@
     margin-left: 70px;
 }
 
-/* Topbar */
+/* Topbar atau header atas */
 .topbar {
     height: 60px;
     background: var(--galaxy-gradient) !important;
@@ -97,7 +97,7 @@
     transform: scale(1.05);
 }
 
-/* Cards */
+/* Styling card-card */
 .card {
     border: none;
     border-radius: 0.75rem;
@@ -115,7 +115,7 @@
     font-weight: 600;
 }
 
-/* Stats Cards */
+/* Card khusus buat statistik */
 .stats-card {
     background: var(--galaxy-gradient);
     color: white;
@@ -143,7 +143,7 @@
     opacity: 0.9;
 }
 
-/* Tables */
+/* Styling tabel */
 .table {
     border-radius: 0.5rem;
     overflow: hidden;
@@ -156,7 +156,7 @@
     color: #495057;
 }
 
-/* Forms */
+/* Styling form */
 .form-control, .form-select {
     border-radius: 0.5rem;
     border: 1px solid #ced4da;
@@ -168,7 +168,7 @@
     box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
-/* Buttons */
+/* Styling tombol */
 .btn {
     border-radius: 0.5rem;
     font-weight: 500;
@@ -186,7 +186,7 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Preloader */
+/* Loading screen */
 .preloader {
     position: fixed;
     top: 0;
@@ -218,7 +218,7 @@
     100% { transform: rotate(360deg); }
 }
 
-/* Responsive */
+/* Responsive design buat mobile */
 @media (max-width: 768px) {
     .sidebar {
         transform: translateX(-100%);
@@ -248,7 +248,7 @@
     }
 }
 
-/* Chart Containers */
+/* Container buat chart */
 .chart-container {
     position: relative;
     height: 300px;
@@ -263,7 +263,7 @@
 
 
 
-/* Enhanced Stats Cards */
+/* Card statistik yang lebih keren */
 .stats-card {
     position: relative;
     overflow: hidden;
@@ -318,7 +318,7 @@
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
-/* Enhanced Timeline */
+/* Timeline yang lebih bagus */
 .timeline {
     position: relative;
     padding-left: 40px;
@@ -373,7 +373,7 @@
     margin-bottom: 8px;
 }
 
-/* Enhanced Quick Actions */
+/* Tombol aksi yang lebih stylish */
 .btn {
     border-radius: 12px;
     font-weight: 600;
@@ -403,7 +403,7 @@
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-/* Animations */
+/* Animasi-animasi keren */
 .fade-in {
     animation: fadeIn 0.5s ease-in;
 }
@@ -442,7 +442,7 @@
 
 
 
-/* Enhanced Table Design */
+/* Desain tabel yang lebih modern */
 .table {
     background: white;
     border-radius: 15px;
@@ -478,7 +478,7 @@
     font-size: 0.95rem;
 }
 
-/* Responsive Enhancements */
+/* Responsivitas untuk HP */
 @media (max-width: 768px) {
     .hero-section, .modern-header {
         padding: 2rem 0;
