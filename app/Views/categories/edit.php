@@ -5,14 +5,6 @@
     <h4 class="mb-0">Ubah Kategori</h4>
     <!-- Form Pencarian -->
     <div class="d-flex gap-2">
-        <form action="<?= base_url('customers') ?>" class="d-flex" method="get">
-            <div class="input-group input-group-sm">
-                <span class="input-group-text">
-                    <i class="bi bi-search"></i>
-                </span>
-                <input type="text" name="keyword" class="form-control" value="<?= $keyword ?? '' ?>">
-            </div>
-        </form>
         <a href="<?= base_url('categories') ?>" class="btn btn-success btn-sm">
         <i class="bi bi-arrow-left me-1"></i> Kembali
         </a>

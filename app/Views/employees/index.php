@@ -7,22 +7,42 @@ $perPage =  $perPage ?? 5;
 $noAwal = 1 + ($perPage * ($currentPage - 1))
 
 ?>
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <h4 class="mb-0">Data Employee</h4>
-     <div class="d-flex gap-2">
-        <form action="<?= base_url('employees') ?>" class="d-flex" method="get">
-            <div class="input-group input-group-sm">
-                <span class="input-group-text">
-                    <i class="bi bi-search"></i>
-                </span>
-                <input type="text" name="keyword" class="form-control" value="<?= $keyword ?? '' ?>">
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h1 class="h3 mb-0 text-gray-800">Data Employee</h1>
+                <p class="text-muted">Manage your Employee inventory</p>
             </div>
-        </form>
-         <a href="<?= base_url('employees/create') ?>" class="btn btn-primary btn-sm">
-        <i class="bi bi-plus-circle me-1"></i> Tambah Employee
-        </a>
+            <a href="<?= base_url('employees/create') ?>" class="btn btn-primary">
+                <i class="fas fa-plus me-2"></i>Add New Employee
+            </a>
+        </div>
     </div>
-       
+</div>
+
+<!-- Search and Filters -->
+<div class="card mb-4">
+    <div class="card-body">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <form action="<?= base_url('employees') ?>" method="get" class="d-flex">
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <input type="text" name="keyword" class="form-control table-search"
+                               placeholder="Search employees" value="<?= $keyword ?? '' ?>">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 text-end">
+                <small class="text-muted">
+                    Showing <?= count($employees) ?> of <?= $pager->getTotal('employees') ?> employee
+                </small>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="card">
@@ -52,12 +72,14 @@ $noAwal = 1 + ($perPage * ($currentPage - 1))
                             <td><?= esc($row['hire_date']); ?></td>
                             <td><?= esc($row['status']); ?></td>
                             <td>
-                                <a href="<?= base_url('employees/edit/' . $row['employee_id']) ?>" class="btn btn-sm btn-warning">
-                                    Edit
-                                </a>
-                                <a href="<?= base_url('employees/delete/' . $row['employee_id']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin Hapus Data?')">
-                                    Hapus
-                                </a>
+                                <div class="btn-group" role="group">
+                                    <a href="<?= base_url('employees/edit/' . $row['employee_id']) ?>"
+                                       class="btn btn-sm btn-outline-primary"
+                                       data-bs-toggle="tooltip"
+                                       title="Edit Customer">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                </div>
                             </td>
                         </tr>
                         <?php endforeach; ?>

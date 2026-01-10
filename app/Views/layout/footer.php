@@ -8,7 +8,7 @@
             </div>
             <div class="col-md-6 text-end">
                 <small class="text-muted">
-                    Developed by <strong>Ahmad Faqih</strong> |
+                    Developed by <strong>Ahmad Faqih, Elok Artha, Aditya Saputra</strong> |
                     Politeknik LP3I Jakarta Kampus Tangerang
                 </small>
             </div>

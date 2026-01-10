@@ -33,7 +33,7 @@ $noAwal = 1 + ($perPage * ($currentPage - 1))
                             <i class="fas fa-search"></i>
                         </span>
                         <input type="text" name="keyword" class="form-control table-search"
-                               placeholder="Search products..." value="<?= $keyword ?? '' ?>">
+                               placeholder="Search products" value="<?= $keyword ?? '' ?>">
                     </div>
                 </form>
             </div>
@@ -95,7 +95,7 @@ $noAwal = 1 + ($perPage * ($currentPage - 1))
                                        class="btn btn-sm btn-outline-danger"
                                        data-bs-toggle="tooltip"
                                        title="Delete Product"
-                                       data-confirm-delete="Are you sure you want to delete this product?">
+                                       data-confirm-delete="Apa kamu serius ingin menghapus data ini?">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </div>
