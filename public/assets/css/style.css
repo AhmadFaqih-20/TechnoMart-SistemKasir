@@ -54,18 +54,17 @@
 /* Topbar atau header atas */
         .topbar {
             height: 60px;
-            background: white !important;
-            color: #495057 !important;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-bottom: 1px solid #dee2e6;
+            background: var(--galaxy-gradient) !important;
+            color: white !important;
+            box-shadow: 0 2px 10px rgba(124, 58, 237, 0.2);
         }
 
         .topbar .page-title {
-            color: #495057 !important;
+            color: white !important;
         }
 
         .topbar .text-muted {
-            color: #6c757d !important;
+            color: rgba(255, 255, 255, 0.8) !important;
         }
 
 .topbar .dropdown-menu {
